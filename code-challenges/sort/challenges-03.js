@@ -4,11 +4,15 @@
 CHALLENGE 1
 
 Write a function named sortBackwards that takes in an array of numbers and returns the same array, with the numbers sorted, highest to smallest.
+
 ------------------------------------------------------------------------------------------------ */
 
 const sortBackwards = (arr) => {
   // Solution code here...
-};
+  arr = arr.sort((a,b) =>{ return a < b})
+    return arr;
+  };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -22,6 +26,9 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) => {
   // Solution code here...
+  arr = arr.sort((a,b) =>{ return a >b})
+  return arr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -161,7 +168,7 @@ DO NOT CHANGE any of the below code.
 Run your tests from the console: jest challenges-03.test.js
 ------------------------------------------------------------------------------------------------ */
 
-describe('Testing challenge 1', () => {
+xdescribe('Testing challenge 1', () => {
   test('It should sort high-to-low the numbers in an array', () => {
     const nums = [3,4,5,6,7];
     expect(sortBackwards(nums)).toStrictEqual([7,6,5,4,3]);
@@ -172,7 +179,7 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should sort strings alphabetically', () => {
     expect(alphabetize(['alphabet', 'Zebra', 'Alphabet', 'carrot'])).toStrictEqual([ 'Alphabet', 'Zebra', 'alphabet', 'carrot']);
     expect(alphabetize(['alphabet','Alphabet', 'carrot'])).toStrictEqual([ 'Alphabet', 'alphabet', 'carrot']);
