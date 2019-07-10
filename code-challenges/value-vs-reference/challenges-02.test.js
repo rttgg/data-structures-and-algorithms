@@ -10,9 +10,8 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 
 const appendTheEnd = (str) => {
   // Solution code here...
-  let a = str;
-  let b = `${str} The end.`
-  return a,b
+  let modString = str + ' The end.';
+  return modString;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -30,8 +29,7 @@ console.log(a) prints [1, 2, 3, 1]
 
 const appendFirstToLast = (arr) => {
   // Solution code here...
-  arr.push('Yes');
-  return arr
+  arr.push(arr[0]);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,10 +67,9 @@ console.log(people[1].isAuthor) prints true
 
 const setStatusAsAuthor = (people) => {
   // Solution code here...
-  people[0].isAuthor = true
-  people[1].isAuthor = true
-  people[2].isAuthor = true
-
+  people.forEach((val) => {
+    val.isAuthor = true;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -99,10 +96,9 @@ const a = [1, 2, 3, 4];
 
 const append = (arr1, arr2) => {
   // Solution code here...
-  let a = arr1;
-  let b = arr2;
-  a.push(...b); 
-
+  arr2.forEach((val) => {
+    arr1.push(val);
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -116,7 +112,7 @@ Run your tests from the console: jest challenges-02.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-xdescribe('Testing challenge 1', () => {
+describe('Testing challenge 1', () => {
   test('It should append without modifying the oiginal', () => {
     const a = 'This is my story.';
     const b = appendTheEnd(a);
@@ -126,7 +122,7 @@ xdescribe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should append by modifying the oiginal', () => {
     const a = ['Yes', 'it', 'is'];
     appendFirstToLast(a);
@@ -135,7 +131,7 @@ xdescribe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should add a property to an object', () => {
     const a = { fullName: 'Octavia Butler' };
     addBirthYearProperty(a, 1947);
@@ -144,7 +140,7 @@ xdescribe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should add a property to every object in an array', () => {
     const a = [{ fullName: 'Octavia Butler' }, { fullName: 'Ray Bradbury' }, { fullName: 'Kurt Vonnegut' }];
     setStatusAsAuthor(a);
@@ -155,7 +151,7 @@ xdescribe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should append the second array to the first', () => {
     const a = [1, 2, 3, 4];
     const b = [5, 6, 7, 8];
