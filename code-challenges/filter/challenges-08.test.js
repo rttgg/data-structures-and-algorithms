@@ -97,22 +97,12 @@ const snorlaxData = {
   name: 'snorlax',
   weight: 4600,
 };
-// return arr.filter((withOutChildren) => {
-//   if (!withOutChildren.children){
-//     return true;
-//   } else {
-//     return false
-//snorlaxData.stats, 50
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
   // Solution code here...
-  return arr.filter((lessThan) => {
-    if (minBaseStat < stat.baseStat){
-      return true;
-    }
-  })
-
-
+  return arr.filter(open => {
+    return open.baseStat > minBaseStat; 
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -125,6 +115,12 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 
 const getStatName = (arr, minBaseStat) => {
   // Solution code here...
+  function isGreater(result){
+    if(result.baseStat > minBaseStat){
+      return true;
+    }
+  }
+  return arr.filter(isGreater).map(obj => obj.stat.name);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -183,16 +179,21 @@ const characters = [
 //     return false
 //   }
 // })
-
+// return arr.filter(withOutChildren => {
+//   if (!('children 'in withOutChildren)){
+//              return true; 
+    
+//   } 
+// });
 const getCharactersWithoutChildren = (arr) => {
   // Solution code here...
-  return arr.filter((withOutChildren) => {
-    if (!withOutChildren.children){
+  function allCharacter(item) {
+    if(!item.children){
       return true;
-    } else {
-      return false
     }
-  })
+  }
+  return arr.filter(allCharacter);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
