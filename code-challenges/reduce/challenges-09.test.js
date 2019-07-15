@@ -154,16 +154,14 @@ const characters = [
 
 const countNumberOfChildren = (arr) => {
   // Solution code here...
-  // arr.reduce((accumulator, value) => ({
-  //   //if (value.children){
-  //    accumulator: accumulator.children + value.children}), 0);
-  //   }
-    //return accumulator;
- // }, 0)
-//};
-return arr.reduce((accumulator, value) => 
-accumulator.children + value.children, 0);
-}
+  return arr.reduce((accumulator, value) => {
+    if (value.children){
+     accumulator.push(value.children.length);
+    }
+    return accumulator;
+ }, []).reduce((accumulator, value)=> accumulator + value);
+};
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -199,8 +197,12 @@ const isPrime = (value) => {
 
 const countPrimeNumbers = (arr) => {
   // Solution code here...
-  return arr.reduce((accumulator, val) => 
-  accumulator + val.isPrime, 0)
+  return arr.reduce((accumulator, value) => {
+  if (isPrime(value)) {
+    accumulator++;
+  }
+  return accumulator;
+}, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
