@@ -83,7 +83,7 @@ All the code below will verify that your functions are working to solve the chal
 DO NOT CHANGE any of the below code.
 
 Run your tests from the console: jest solutions-11.test.js
-return /^[a-zA-Z0-9]+?.?[a-zA-Z0-9]+@\w+(.org|.net|.com)$/.test(email);
+
 ------------------------------------------------------------------------------------------------ */
 
 describe('Testing challenge 1', () => {
