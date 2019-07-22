@@ -88,7 +88,22 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
-  return starWarsData.name
+  let myArr = arr.filter(val => {
+    if (val.name === 'Luke Skywalker') {
+      return true;
+    }
+  });
+  let stringReturn = '';
+  for (let i = 0; i < arr.length; i++){
+    if(parseInt(arr[i].mass) > parseInt(myArr[0].mass)) {
+     if (stringReturn === ''){
+      stringReturn = arr[i].name;
+    } else {
+      stringReturn = stringReturn + ' - ' + arr[i].name;
+    }
+   }
+  }
+  return stringReturn;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -162,6 +177,12 @@ Here is a sample board:
 
 const detectTicTacToeWin = (board) => {
   // Solution code here...
+  const someoneWon = false;
+  for(let i = 0; i < board.length; i++){
+    for (let j = 0; j < board[i].length; j++){
+      
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
