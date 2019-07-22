@@ -196,11 +196,9 @@ const lowestWeeklyAverage = (weather) => {
       sum += weather[i][j]
 
     }
-
     newArr.push(sum / 7);
-    newArr.sort((a, b) => {
-      a - b;
-    })
+    newArr.sort((a, b) => a - b);
+    
   }
   return newArr[0]
 };
@@ -219,6 +217,17 @@ For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 
 const excel = (str) => {
   // Solution code here...
+  let newArr = str.split('\n');
+  let sumArray = [];
+  for (let i = 0; i < newArr.length; i++) {
+    let myArr = newArr[i].split(',');
+    let sum = 0;
+    for (let j = 0; j < myArr.length; j++) {
+      sum = sum + parseInt(myArr[j]);
+    }
+    sumArray.push(sum);
+  }
+  return sumArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
