@@ -28,5 +28,11 @@ public class ArrayShiftTest {
         int[] outPut = new int[]{9};
         assertArrayEquals(outPut, ArrayShift.insertShiftArray(newArray, 9));
     }
+//    @Test
+//    public void testInsertShiftArray_ArrayWithNumericalOrder() {
+//        int[] newArray = new int[10,20,50,30,40]{};
+//        int[] outPut = new int[]{10,20,50,50,30,40};
+//        assertArrayEquals(outPut, ArrayShift.insertShiftArray(newArray, 50));
+//    }
 
 }
