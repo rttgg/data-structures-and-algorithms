@@ -3,7 +3,6 @@ package code401challenges;
 import java.util.Arrays;
 
 public class BinarySearch{
-
     public static int binarySearch(int[] theArr, int target){
         int middleInx = theArr.length/2;
         while(middleInx < theArr.length && middleInx > 0){
