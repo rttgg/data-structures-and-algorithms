@@ -5,9 +5,9 @@ public class Node<any> {
     public any value;
 
 
-    public Node(any value){
+    public Node(any value, Node next){
         this.value = value;
-        this.next = null;
+        this.next = next;
     }
 
 }
