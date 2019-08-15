@@ -103,7 +103,10 @@
          //RETURN THE K VALUE
                 public any kthFrontEnd(int k) {
                     Node<any>current = head;
-                    int count = 0;
+                 int count = 0;
+//                  if (k < 0){
+//                        return Exception;
+//                  }
                     //count the number of nodes in Linked List
                     while (current != null) {
                         count++;
@@ -134,6 +137,39 @@
                     }
                     return "List: " + result;
                 }
+
+
+
+
+                //Merge two linked list
+            public static LinkedList mergeLists(LinkedList list1, LinkedList list2){
+               // Node current = list1.head;
+                Node current1 = list1.head;
+                Node current2 = list2.head;
+                Node runner1 = current1.next;
+                Node runner2 = current2.next;
+
+                while ( runner1 != null && runner2 != null) {
+                    current1.next = current2;
+                    current1 = current1.next;
+                    current2 = current2.next;
+                    current1.next = runner1;
+                    current1 = current1.next;
+                    runner1 = current1.next;
+                    runner2 = current2.next;
+                }
+                if(runner1 == null && runner2 != null){
+                    current1.next = current2;
+                } else {
+                    current1.next = current2;
+                    current1 = current1.next;
+                    current2 = current2.next;
+                    current1.next = runner1;
+
+                }
+                return list1;
+
+            }
 
         }
 
