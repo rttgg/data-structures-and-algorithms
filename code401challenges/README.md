@@ -5,3 +5,4 @@
 * [Data Structure : linked_list](./readmes/linkedlist.md)
 * [Kth FrontEnd : linked list](./readmes/kthfrontend.md)
 * [MergeLists : linked list](./readmes/mergelists.md)
+* [StackAndQueues : stack and queues](./readmes/stacksandqueues.md)
