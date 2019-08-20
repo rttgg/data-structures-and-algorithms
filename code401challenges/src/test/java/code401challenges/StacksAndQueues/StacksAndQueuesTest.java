@@ -78,21 +78,21 @@ public class StacksAndQueuesTest {
         testQueue.enqueue(1);
         assertEquals("1", 1, testQueue.front.value);
         assertEquals("null", null, testQueue.front.next);
-        assertEquals("1", 1, testQueue.rear.value);
-        assertEquals("null", null, testQueue.rear.next);
+        assertEquals("1", 1, testQueue.back.value);
+        assertEquals("null", null, testQueue.back.next);
 
         testQueue.enqueue(2);
         assertEquals("1", 1, testQueue.front.value);
         assertEquals("2", 2, testQueue.front.next.value);
-        assertEquals("2", 2, testQueue.rear.value);
-        assertEquals("null", null, testQueue.rear.next);
+        assertEquals("2", 2, testQueue.back.value);
+        assertEquals("null", null, testQueue.back.next);
 
         testQueue.enqueue(3);
         assertEquals("1", 1, testQueue.front.value);
         assertEquals("2", 2, testQueue.front.next.value);
         assertEquals("3", 3, testQueue.front.next.next.value);
-        assertEquals("3", 3, testQueue.rear.value);
-        assertEquals("null", null, testQueue.rear.next);
+        assertEquals("3", 3, testQueue.back.value);
+        assertEquals("null", null, testQueue.back.next);
     }
 
 

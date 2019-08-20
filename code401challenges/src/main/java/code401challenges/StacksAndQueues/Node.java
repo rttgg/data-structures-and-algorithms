@@ -8,6 +8,7 @@ public class Node<T> {
     public T value;
     public Node next;
 
+    //constructor
     public Node(T value, Node next){
         this.value = value;
         this.next = next;

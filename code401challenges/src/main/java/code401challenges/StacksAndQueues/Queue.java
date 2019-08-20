@@ -15,13 +15,13 @@ package code401challenges.StacksAndQueues;
 public class Queue<T> implements Information {
     //Instance properties
     protected Node<T> front;
-    protected Node<T> rear;
+    protected Node<T> back;
 
 
     //constructor
     public Queue(){
         this.front = null;
-        this.rear = null;
+        this.back = null;
     }
 
 
@@ -31,10 +31,11 @@ public class Queue<T> implements Information {
         Node newNode = new Node(value, null);
         if (this.front == null){
             this.front = newNode;
-            this.rear = newNode;
+            this.back = newNode;
         } else {
-            this.rear.next = newNode;
-            this.rear = newNode;
+            //new node should be the back, and point at the old back
+            this.back.next = newNode;
+            this.back = newNode;
         }
     }
 
@@ -49,7 +50,7 @@ public class Queue<T> implements Information {
           T frontNodeValue = this.front.value;
           this.front = this.front.next;
           if (this.front == null){
-              this.rear = null;
+              this.back = null;
           }
           return frontNodeValue;
       }
