@@ -7,3 +7,4 @@
 * [MergeLists : linked list](./readmes/mergelists.md)
 * [StackAndQueues : stack and queues](./readmes/stacksandqueues.md)
 * [QueueWithStacks : pseudo_and_queue](./readmes/pseudoqueue.md)
+* [Animal shelter : sta](./readmes/animalshelter.md)
