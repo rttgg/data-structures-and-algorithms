@@ -4,37 +4,37 @@ package code401challenges.tree;
 //https://www.baeldung.com/java-binary-tree
 //https://www.geeksforgeeks.org/binary-search-tree-set-1-search-and-insertion/
 public class BinarySearchTree<node> {
-    public Node node;
+    public Node root;
 
 
     public void add(int value) {
-        node = addRecursive(node, value);
+        root = addRecursive(root, value);
 
     }
 
-    private Node addRecursive(Node node, int value) {
-        if (node == null) {
-            node = new Node(value);
+    private Node addRecursive(Node current, int value) {
+        if (current == null) {
+            return new Node(value);
 
         }
-        if (value < node.value) {
-            node.leftChild = addRecursive(node.leftChild, value);
+        if (value < current.value) {
+            current.leftChild = addRecursive(current.leftChild, value);
 
         }
-        else if (value < node.value) {
-            node.rightChild = addRecursive(node.rightChild, value);
+        else if (value < current.value) {
+            current.rightChild = addRecursive(current.rightChild, value);
 
         }
         else {
-            return node;
+            return current;
         }
-        return node;
+        return current;
     }
 
 
     //returns a boolean indicating whether or not the value is in the tree at least once
         public boolean contains( int value){
-            return containsRecursive(node, value);
+            return containsRecursive(root, value);
         }
 
 

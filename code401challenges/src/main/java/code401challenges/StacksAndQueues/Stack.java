@@ -40,6 +40,10 @@ public class Stack<T> implements Information{
 //        }
 //        return null;
     }
+
+    public boolean isEmpty() {
+        return false;
     }
+}
 
 

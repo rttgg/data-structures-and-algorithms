@@ -7,10 +7,29 @@ package code401challenges.StacksAndQueues;
 public class Node<T> {
     public T value;
     public Node next;
+    private Object data;
+    private Node right;
+    private Node left;
 
     //constructor
     public Node(T value, Node next){
         this.value = value;
         this.next = next;
+    }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(T fizzBuzz) {
+
+    }
+
+    public Node getRight() {
+        return right;
+    }
+
+    public Node getLeft() {
+        return left;
     }
 }
