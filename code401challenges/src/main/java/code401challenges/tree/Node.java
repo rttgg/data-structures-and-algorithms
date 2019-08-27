@@ -10,10 +10,11 @@ public class Node {
 
     }
 
+
     public void Node(int value){
         this.value = value;
-        this.leftChild = leftChild;
-        this.rightChild = rightChild;
+        this.leftChild = null;
+        this.rightChild = null;
 
 
     }
