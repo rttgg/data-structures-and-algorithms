@@ -1,111 +1,57 @@
-package code401challenges.tree;
+    package code401challenges.tree;
 
-import org.junit.Test;
+    import org.junit.Test;
 
-import static org.junit.Assert.*;
+    import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-
-public class BinarySearchTreeTest {
-
-
+    public class BinarySearchTreeTest {
 
         @Test
-        public void testBinarySearch() {
-            BinarySearchTree binarySearch = new BinarySearchTree();
-            assertNull("empty tree", binarySearch.root);
+        public void testAdd(){
+            BinarySearchTree testBinaryTree = new BinarySearchTree();
+            Node<Integer> rootNode = new Node<>(50);
+            Node<Integer> leftNode = new Node<>(20);
+            Node<Integer> rightNode = new Node<>(80);
+            Node<Integer> leftRightNode = new Node<>(60);
+            Node<Integer> rightRightNode = new Node<>(90);
+            testBinaryTree.root = rootNode;
+            rootNode.leftChild = leftNode;
+            rootNode.rightChild = rightNode;
+            leftNode.rightChild = leftRightNode;
+            rightNode.rightChild = rightRightNode;
+
+            testBinaryTree.add(2);
+            assertEquals("2, 20, 60, 50, 80, 90, ", BinarySearchTree.arrayListToString(testBinaryTree.inOrder()));
+            testBinaryTree.add(9);
+            assertEquals("2, 9, 20, 60, 50, 80, 90, ", BinarySearchTree.arrayListToString(testBinaryTree.inOrder()));
+            testBinaryTree.add(100);
+            System.out.println(BinarySearchTree.arrayListToString(testBinaryTree.inOrder()));
+            assertEquals("2, 9, 20, 60, 50, 80, 90, 100, ", BinarySearchTree.arrayListToString(testBinaryTree.inOrder()));
+
+
         }
 
         @Test
-        public void testRoot() {
-            BinarySearchTree binarySearch = new BinarySearchTree();
-            binarySearch.add(0);
-            assertEquals("0", binarySearch.root.value, 0);
+        public void testContains(){
+            BinarySearchTree testBinaryTree = new BinarySearchTree();
+            Node<Integer> rootNode = new Node<>(50);
+            Node<Integer> leftNode = new Node<>(25);
+            Node<Integer> rightNode = new Node<>(75);
+            Node<Integer> leftRightNode = new Node<>(40);
+            Node<Integer> rightRightNode = new Node<>(90);
+            testBinaryTree.root = rootNode;
+            rootNode.leftChild = leftNode;
+            rootNode.rightChild = rightNode;
+            leftNode.rightChild = leftRightNode;
+            rightNode.rightChild = rightRightNode;
+
+            assertFalse(testBinaryTree.contains(20));
+            assertTrue(testBinaryTree.contains(75));
+            assertTrue(testBinaryTree.contains(90));
+
+
         }
 
-        @Test
-        public void testLcRcNode() {
-            BinarySearchTree binarySearch = new BinarySearchTree();
-            binarySearch.add(10);
-            binarySearch.add(5);
-            binarySearch.add(15);
-            assertEquals("5", binarySearch.root.leftChild.value, 5);
-            assertEquals("15", binarySearch.root.rightChild.value, 15);
         }
-
-        @Test
-        public void testContains() {
-            BinarySearchTree binarySearch = new BinarySearchTree();
-            binarySearch.add(10);
-            binarySearch.add(5);
-            assertTrue("Should be 5", binarySearch.contains(5));
-        }
-
-        @Test
-        public void testPreOrder() {
-            ArrayList<Integer> list = new ArrayList<>();
-            list.add(10);
-            list.add(5);
-            list.add(2);
-            list.add(6);
-            list.add(15);
-            list.add(12);
-            list.add(25);
-            BinarySearchTree binarySearch = new BinarySearchTree();
-            BinaryTree bt = new BinaryTree();
-            binarySearch.add(10);
-            binarySearch.add(5);
-            binarySearch.add(2);
-            binarySearch.add(6);
-            binarySearch.add(15);
-            binarySearch.add(12);
-            binarySearch.add(25);
-            assertEquals("Should be in preOrder", bt.preOrder(binarySearch.root), list);
-        }
-
-        @Test
-        public void testInOrder() {
-            ArrayList<Integer> list = new ArrayList<>();
-            list.add(2);
-            list.add(5);
-            list.add(6);
-            list.add(10);
-            list.add(12);
-            list.add(15);
-            list.add(25);
-            BinarySearchTree binarySearch = new BinarySearchTree();
-            BinaryTree binary = new BinaryTree();
-            binarySearch.add(10);
-            binarySearch.add(5);
-            binarySearch.add(2);
-            binarySearch.add(6);
-            binarySearch.add(15);
-            binarySearch.add(12);
-            binarySearch.add(25);
-            assertEquals("Should be inOrder traversal", binary.inOrder(binarySearch.root), list);
-        }
-
-        @Test
-        public void testPostOrder() {
-            ArrayList<Integer> list = new ArrayList<>();
-            list.add(2);
-            list.add(6);
-            list.add(5);
-            list.add(12);
-            list.add(25);
-            list.add(15);
-            list.add(10);
-            BinarySearchTree binarySearch = new BinarySearchTree();
-            BinaryTree bt = new BinaryTree();
-            binarySearch.add(10);
-            binarySearch.add(5);
-            binarySearch.add(2);
-            binarySearch.add(6);
-            binarySearch.add(15);
-            binarySearch.add(12);
-            binarySearch.add(25);
-            assertEquals("Should in postOrder traversal", bt.postOrder(binarySearch.root), list);
-        }
-    }
 
 

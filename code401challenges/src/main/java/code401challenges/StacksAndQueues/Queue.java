@@ -61,4 +61,11 @@ public class Queue<T> implements Information {
         return this.front != null ? this.front.value : null;
     }
 
+    public void add(T root) {
+
+    }
+
+    public boolean isEmpty() {
+        return false;
+    }
 }
