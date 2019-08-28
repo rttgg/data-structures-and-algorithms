@@ -9,45 +9,42 @@ package code401challenges.utilities.fizzbuzz_tree;
 //Ensure your node values are of type Object, to hold either strings or integers.
 
 
-import code401challenges.StacksAndQueues.Node;
-import code401challenges.StacksAndQueues.Stack;
-import com.sun.source.tree.BinaryTree;
 
+//https://github.com/codefellows/seattle-java-401d5/blob/master/class-16/demo/Tree.java
+
+import code401challenges.StacksAndQueues.Node;
+import code401challenges.tree.BinaryTree;
 
 public class FizzBuzzTree {
-    public static BinaryTree fizzBuzzTree(BinaryTree fizzBuzzTree){
-        Node<Object> root;
-        root = (Node<Object>) fizzBuzzTree();
-        if (root != null){
-          Stack<Node> nodes = new Stack<>();
-          nodes.push(root);
+    public static BinaryTree<Object> fizzBuzzTree(BinaryTree<Object> treeToFizzBuzz) {
 
-          while (!nodes.isEmpty()) {
-              Node<Object> current = nodes.pop();
-              if ((int)current.getData() % 15 == 0){
-                  current.setData("FizzBuzz");
-              }else if ((int)current.getData() % 3 == 0){
-                  current.setData("Fizz");
-              }else if ((int) current.getData() % 5 == 0){
-                  current.setData("Buzz");
-              }
-              if (current.getRight() != null){
-                  nodes.push(current.getRight());
-              }
-              if(current.getLeft() != null){
-                  nodes.push(current.getLeft());
-              }
-          }
-        }
-      return fizzBuzzTree;
+        return treeToFizzBuzz;
     }
 
-    public static void main(String[] args){
-        BinaryTree bt = new BinaryTree() {
+    public static void fizzBuzzTreeHelper(Node<Object> node) {
 
-        };
-        };
 
+        if (node.leftChild != null) {
+            fizzBuzzTreeHelper(node.leftChild);
         }
 
+        node.value = changeToFizzBuzz((Integer) node.value);
 
+
+        if (node.rightChild != null) {
+            fizzBuzzTreeHelper(node.rightChild);
+        }
+    }
+
+
+    public static Object changeToFizzBuzz(int value) {
+        if (value % 3 == 0 && value % 5 == 0) {
+            return "FizzBuzz";
+        } else if (value % 3 == 0) {
+            return "Fizz";
+        } else if (value % 5 == 0) {
+            return "Buzz";
+        }
+        return value;
+    }
+}

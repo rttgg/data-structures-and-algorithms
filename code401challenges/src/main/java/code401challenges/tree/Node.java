@@ -1,25 +1,33 @@
-package code401challenges.tree;
+    package code401challenges.tree;
 
-public class Node {
+    public class Node<T> {
 
-    public int value;
-    public Node leftChild;
-    public Node rightChild;
+        public Node leftChild;
+        // instance variables
+        T value;
 
-    public Node(int value) {
+        Node rightChild;
+        Node nextNode;
+
+        // constructor
+        public Node ( Node leftChild, Node rightChild,T value) {
+
+            this.leftChild = leftChild;
+            this.rightChild = rightChild;
+            this.value = value;
+            this.nextNode = null;
+        }
+
+        public Node (T value){
+
+            this.leftChild = null;
+            this.rightChild = null;
+            this.value = value;
+            this.nextNode = null;
+        }
+
+        public Node (){
+        }
+
 
     }
-
-
-    public void Node(int value){
-        this.value = value;
-        this.leftChild = null;
-        this.rightChild = null;
-
-
-    }
-//    public String toString(){
-//        return this.value.toString();
-//    }
-
-}

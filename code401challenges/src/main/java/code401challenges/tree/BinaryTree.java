@@ -1,87 +1,91 @@
-package code401challenges.tree;
+    package code401challenges.tree;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.concurrent.LinkedBlockingDeque;
+    import java.util.ArrayList;
 
-public class BinaryTree {
-    public Node root;
+    public class BinaryTree<T> {
+        public Node root;
 
-    ArrayList<Integer> list = new ArrayList<>();
-
-
-    //which returns an array of the values, ordered appropriately.
-    //pre-order traversal visits first the root node, then the left subtree, and finally the right subtree:
-    public ArrayList<Integer> preOrder(Node root){
-        if (root != null){
-            System.out.println(" " + root.value);
-            preOrder(root.leftChild);
-            preOrder(root.rightChild);
+        public BinaryTree(Node root) {
+            this.root = root;
         }
-        return list;
-    }
-//in-order traversal consists of first visiting the left sub-tree, then the root node, and finally the right sub-tree
-    public ArrayList<Integer> inOrder(Node root) {
 
-        if (root != null) {
-            inOrder(root.leftChild);
-            System.out.println(" " + root.value);
-            //list = new ArrayList<>();
-            list.add(root.value);
-            inOrder(root.rightChild);
-
+        public BinaryTree() {
+            this.root = null;
         }
-        return list;
 
 
-    }
-
-    //post-order traversal visits the left subtree, the right subtree, and the root node at the end
-    public ArrayList<Integer> postOrder(Node root) {
-
-        if (root != null) {
-            postOrder(root.leftChild);
-            postOrder(root.rightChild);
-            System.out.println(" " + root.value);
-            //list = null;
-            list.add(root.value);
+        //inOrder
+        public ArrayList<T> inOrder(){
+            ArrayList<T> value = new ArrayList<>();
+            inOrderHelper(this.root, value);
+            return value;
         }
-        return list;
-    }
 
-    public void firstTraversal(Node root) {
-        Queue<Node> linkedList = new LinkedList<>();
-        linkedList.add(root);
+        private void inOrderHelper(Node node, ArrayList value){
 
-        while (!linkedList.isEmpty()){
-            Node node = linkedList.remove();
-            System.out.print("" + root.value);
-            if (root.leftChild != null){
-                linkedList.add(root.leftChild);
-
+            if (node.leftChild != null){
+                inOrderHelper(node.leftChild, value);
             }
-            if(root.rightChild != null){
-                linkedList.add(root.rightChild);
+            value.add(node.value);
+
+            if (node.rightChild != null){
+                inOrderHelper(node.rightChild, value);
             }
         }
-    }
 
-    public int findTheLargeValue(Node root){
-        int large = 0;
-        if(root != null){
-            if(root.value > large) large = root.value;
 
-            int leftChildValue = findTheLargeValue(root.leftChild);
-            int rightChildValue = findTheLargeValue(root.rightChild);
-            if(leftChildValue > large)
-                large = leftChildValue;
 
-            if (rightChildValue > large)
-                large = rightChildValue;
-
-            }
-        return large;
+        //preOrder
+        public ArrayList<T> preOrder(){
+            ArrayList<T> value = new ArrayList<>();
+            preOrderHelper(this.root, value);
+            return value;
         }
+
+        private void preOrderHelper(Node node, ArrayList value){
+
+            value.add(node.value);
+
+            if (node.leftChild != null){
+                preOrderHelper(node.leftChild, value);
+            }
+            if (node.rightChild != null){
+                preOrderHelper(node.rightChild, value);
+            }
+
+
+        }
+
+        //postOrder
+        public ArrayList<T> postOrder(){
+            ArrayList<T> value = new ArrayList<>();
+            postOrderHelper(this.root, value);
+            return value;
+        }
+
+        private void postOrderHelper(Node node, ArrayList value){
+
+            if (node.leftChild != null){
+                postOrderHelper(node.leftChild, value);
+            }
+
+            if (node.rightChild != null){
+                postOrderHelper(node.rightChild, value);
+            }
+
+            value.add(node.value);
+        }
+
+
+        public static String arrayListToString(ArrayList list){
+
+            String valueString = "";
+
+            for (int i = 0; i < list.size(); i++){
+                valueString += list.get(i);
+            }
+            return valueString;
+        }
+
     }
 

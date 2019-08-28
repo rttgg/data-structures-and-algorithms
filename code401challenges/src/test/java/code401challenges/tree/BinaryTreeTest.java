@@ -1,58 +1,85 @@
-package code401challenges.tree;
+    package code401challenges.tree;
 
-import org.junit.Test;
 
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.*;
 
-public class BinaryTreeTest {
+    import org.junit.Test;
+    import static org.junit.Assert.*;
 
-    @Test
-    public void testBinarySearch() {
-        BinarySearchTree binarySearch = new BinarySearchTree();
-        assertNull("empty tree", binarySearch.root);
+
+
+
+
+    public class BinaryTreeTest {
+        @Test public void testForEmptyTree(){
+            BinaryTree<Integer> emtpyTree = new BinaryTree<>();
+            assertNotNull(emtpyTree);
+        }
+
+        @Test public void testAdd(){
+            BinaryTree<Integer> testTree = new BinaryTree<>();
+            Node<Integer> rootNode = new Node<>(10);
+            Node<Integer> leftNode = new Node<>(20);
+            Node<Integer> rightNode = new Node<>(30);
+
+            testTree.root = rootNode;
+            rootNode.leftChild = leftNode;
+            rootNode.rightChild = rightNode;
+
+
+            assertEquals(10, testTree.root.value);
+            assertEquals(20, testTree.root.leftChild.value);
+            assertEquals(30, testTree.root.rightChild.value);
+        }
+
+        @Test public void testInOrder(){
+            BinaryTree<Integer> testTree = new BinaryTree<>();
+            Node<Integer> rootNode = new Node<>(10);
+            Node<Integer> leftNode = new Node<>(20);
+            Node<Integer> rightNode = new Node<>(30);
+            testTree.root = rootNode;
+            rootNode.leftChild = leftNode;
+            rootNode.rightChild = rightNode;
+
+            String output = BinaryTree.arrayListToString(testTree.inOrder());
+
+            assertEquals("201030", output);
+        }
+
+        @Test public void testPreOrder(){
+            BinaryTree<Integer> testTree = new BinaryTree<Integer>();
+            Node<Integer> rootNode = new Node<>(10);
+            Node<Integer> leftNode = new Node<>(20);
+            Node<Integer> rightNode = new Node<>(30);
+            Node<Integer> leftLeftNode = new Node<>(40);
+            Node<Integer> leftrightNode = new Node<>(50);
+            testTree.root = rootNode;
+            rootNode.leftChild = leftNode;
+            rootNode.rightChild = rightNode;
+            leftNode.leftChild = leftLeftNode;
+            leftNode.rightChild = leftrightNode;
+
+            String output = BinaryTree.arrayListToString(testTree.preOrder());
+
+            assertEquals("1020405030", output);
+
+        }
+
+
+
+        @Test public void testPostInOrder(){
+            BinaryTree<Integer> testTree = new BinaryTree<Integer>();
+            Node<Integer> rootNode = new Node<>(10);
+            Node<Integer> leftNode = new Node<>(20);
+            Node<Integer> rightNode = new Node<>(30);
+            testTree.root = rootNode;
+            rootNode.leftChild = leftNode;
+            rootNode.rightChild = rightNode;
+
+            String output = BinaryTree.arrayListToString(testTree.postOrder());
+
+            assertEquals("203010", output);
+        }
+
+
+
     }
-
-    @Test
-    public void testBreadthFirst() {
-        BinarySearchTree binarySearch = new BinarySearchTree();
-        BinaryTree binary = new BinaryTree();
-        binarySearch.add(12);
-        binarySearch.add(7);
-        binarySearch.add(4);
-        binarySearch.add(8);
-        binarySearch.add(17);
-        binarySearch.add(14);
-        binarySearch.add(27);
-        binary.firstTraversal(binarySearch.root);
-    }
-
-    @Test
-    public void testMaxNumber() {
-        BinarySearchTree binarySearch = new BinarySearchTree();
-        BinaryTree binary = new BinaryTree();
-        binarySearch.add(10);
-        binarySearch.add(5);
-        binarySearch.add(2);
-        binarySearch.add(6);
-        binarySearch.add(15);
-        binarySearch.add(12);
-        binarySearch.add(25);
-        assertEquals("25", binary.findTheLargeValue(binarySearch.root), 25);
-    }
-
-    @Test
-    public void testMaxEdgeC() {
-        BinarySearchTree binarySearch = new BinarySearchTree();
-        BinaryTree binary = new BinaryTree();
-        binarySearch.add(10);
-        assertEquals("10", binary.findTheLargeValue(binarySearch.root), 10);
-    }
-
-//    @Test
-//    public void testFindMaxEdgeNull() {
-//        BinarySearchTree bst = new BinarySearchTree();
-//        BinaryTree bt = new BinaryTree();
-//        assertEquals("Should return 0 when argument is empty tree", bt.findTheLargeValue(bst.root), 0);
-//    }
-}

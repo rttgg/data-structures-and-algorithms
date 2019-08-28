@@ -1,59 +1,78 @@
-package code401challenges.tree;
+    package code401challenges.tree;
 
 
-//https://www.baeldung.com/java-binary-tree
-//https://www.geeksforgeeks.org/binary-search-tree-set-1-search-and-insertion/
-public class BinarySearchTree<node> {
-    public Node root;
+    import java.util.ArrayList;
+
+    //https://github.com/codefellows/seattle-java-401d5/blob/master/class-16/demo/Tree.java
+    //https://www.baeldung.com/java-binary-tree
+    //https://www.geeksforgeeks.org/binary-search-tree-set-1-search-and-insertion/
+    public class BinarySearchTree extends BinaryTree<Integer> {
 
 
-    public void add(int value) {
-        root = addRecursive(root, value);
-
-    }
-
-    private Node addRecursive(Node current, int value) {
-        if (current == null) {
-            return new Node(value);
-
-        }
-        if (value < current.value) {
-            current.leftChild = addRecursive(current.leftChild, value);
-
-        }
-        else if (value < current.value) {
-            current.rightChild = addRecursive(current.rightChild, value);
-
-        }
-        else {
-            return current;
-        }
-        return current;
-    }
-
-
-    //returns a boolean indicating whether or not the value is in the tree at least once
-        public boolean contains( int value){
-            return containsRecursive(root, value);
+        public BinarySearchTree() {
+            this.root = null;
         }
 
 
+        public void add(int valueToAdd){
 
+            Node<Integer> nodeToAdd = new Node<>(valueToAdd);
 
+            addHelper(this.root, nodeToAdd);
 
-    private boolean containsRecursive(Node node, int value) {
-        boolean trueFalse;
-        if (node == null) {
+        }
+
+        public void addHelper(Node<Integer> node, Node<Integer> nodeToAdd){
+
+            if (nodeToAdd.value < node.value){
+
+                if (node.leftChild == null){
+                    node.leftChild = nodeToAdd;
+
+                } else {
+                    addHelper(node.leftChild, nodeToAdd);
+                }
+            }
+
+            if (nodeToAdd.value > node.value){
+                if (node.rightChild == null){
+                    node.rightChild = nodeToAdd;
+
+                } else {
+                    addHelper(node.rightChild, nodeToAdd);
+                }
+            }
+
+        }
+
+        public boolean contains (int value){
+
+            return this.containsHelper(this.root, value);
+        }
+
+        public boolean containsHelper(Node<Integer> node, int value){
+            if (value == node.value){
+
+                return true;
+            } else if (value < node.value && node.leftChild != null){
+
+                return containsHelper(node.leftChild, value);
+            } else if (value > node.value && node.rightChild != null){
+
+                return containsHelper(node.rightChild, value);
+            }
+
             return false;
-        } if (node.value == value) {
-            return true;
-        } if (value < node.value){
-            trueFalse = containsRecursive(node.leftChild, value);
-        } else {
-            trueFalse = containsRecursive(node.rightChild, value);
         }
-        return trueFalse;
-    }
 
-    }
+
+        public static String arrayListToString(ArrayList list){
+            String outputString = "";
+            for (int i = 0; i < list.size(); i++){
+                outputString +=  list.get(i)+ ", ";
+            }
+            return outputString;
+        }
+
+        }
 
