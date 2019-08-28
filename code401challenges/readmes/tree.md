@@ -22,4 +22,4 @@ Reference
 * https://www.baeldung.com/java-binary-tree
 * https://www.geeksforgeeks.org/binary-search-tree-set-1-search-and-insertion/
 * https://codefellows.github.io/common_curriculum/data_structures_and_algorithms/Code_401/class-15/resources/Trees.html
-
+* Class Jane Hue, Nhu Trinh, Jackie, Joachen Busch, Padmapriya Ganapath
