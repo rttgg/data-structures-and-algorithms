@@ -8,3 +8,5 @@
 
 ## Approach & Efficiency
 * used Queues FIFO approach 
+## Reference
+* Class Jane Hue, Nhu Trinh, Jackie, Joachen Busch, Padmapriya Ganapathi
