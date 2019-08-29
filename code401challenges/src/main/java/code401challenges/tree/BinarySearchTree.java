@@ -10,6 +10,7 @@
 
 
         public BinarySearchTree() {
+            super(15);
             this.root = null;
         }
 
