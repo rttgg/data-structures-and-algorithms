@@ -6,7 +6,7 @@ public class BreadthTraversalTest {
 
     @Test
     public void testBreadthTraversal() {
-        BinaryTree testTree = new BinaryTree();
+        BinaryTree testTree = new BinaryTree(15);
         Node<Integer> root = new Node<>(2);
         Node<Integer> rootLeft = new Node<>(7);
         Node<Integer> rootRight = new Node<>(5);

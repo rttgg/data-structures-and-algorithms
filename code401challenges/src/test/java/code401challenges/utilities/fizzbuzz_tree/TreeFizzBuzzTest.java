@@ -10,7 +10,7 @@ public class TreeFizzBuzzTest {
 
     @Test public void testFizzBuzz(){
 
-        BinaryTree<Object> testBinaryTree = new BinaryTree<>();
+        BinaryTree<Object> testBinaryTree = new BinaryTree<>(15);
         Node<Object> rootNode = new Node<>(30);
         Node<Object> leftNode = new Node<>(10);
         Node<Object> rightNode = new Node<>(9);

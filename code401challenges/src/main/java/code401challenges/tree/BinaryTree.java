@@ -1,16 +1,20 @@
     package code401challenges.tree;
 
     import java.util.ArrayList;
+    import java.util.LinkedList;
+    import java.util.Queue;
 
-    public class BinaryTree<T> {
+   public class BinaryTree<T> {
         public Node root;
 
         public BinaryTree(Node root) {
+
             this.root = root;
         }
 
-        public BinaryTree() {
-            this.root = null;
+        public BinaryTree(int i) {
+
+            this.root = new Node(i);
         }
 
 
@@ -86,6 +90,39 @@
             }
             return valueString;
         }
+
+
+
+        public int findMaxValue(){
+            int maxValue = Integer.MIN_VALUE;
+
+
+            Queue<Node> queueList = new LinkedList<>();
+
+            queueList.add(this.root);
+            while (!queueList.isEmpty()){
+                Node rootValue = queueList.poll();
+                if ((int) rootValue.value > maxValue){
+                    maxValue = (int) rootValue.value;
+                }
+                if (rootValue.leftChild != null){
+                    queueList.add(rootValue.leftChild);
+                }
+                if (rootValue.rightChild != null){
+                    queueList.add(rootValue.rightChild);
+                }
+            }
+            return maxValue;
+        }
+
+
+//        public static void main(String[] args){
+//            BinaryTree maxtree = new BinaryTree(15);
+//
+//            System.out.println(maxtree.findMaxValue());
+//        }
+
+
 
     }
 
