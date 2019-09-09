@@ -6,3 +6,5 @@
 
 ## Approach & Efficiency
 * the approach taken is comparing the middle index with the target number and move to right and left index.
+Reference
+Class Jane Hue, Nhu Trinh, Jackie, Steve Grant

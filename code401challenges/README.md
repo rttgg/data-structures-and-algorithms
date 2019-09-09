@@ -9,7 +9,13 @@
 * [QueueWithStacks : pseudo_and_queue](./readmes/pseudoqueue.md)
 * [Animal shelter : sta](./readmes/animalshelter.md)
 * [MultiBracket Validation](./readmes/multibracketvalidation.md)
+
 * [FizzBuzzTree : Binary tree](./readmes/fizzbuzztree.md)
 * [FindMaximumValue : Binary tree](./readmes/findmaximumvalue.md)
 * [InsertionSort : Sort](./readmes/insertionsort.md)
 * [InsertionSort : code](.project/InsertionSort.java)
+
+
+* [FizzBuzzTree : Binary tree](./readmes/fizzbuzztree.md)
+* [BreadthTraversal : Breadth](./readmes/breadth.md)
+
