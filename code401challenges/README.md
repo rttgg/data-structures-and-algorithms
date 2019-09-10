@@ -12,4 +12,5 @@
 * [FizzBuzzTree : Binary tree](./readmes/fizzbuzztree.md)
 * [FindMaximumValue : Binary tree](./readmes/findmaximumvalue.md)
 * [InsertionSort : Sort](./readmes/insertionsort.md)
-* [InsertionSort : code](.project/InsertionSort.java)
+* [InsertionSort : code](./project/InsertionSort.java)
+* [MergeSort : Merge](.redmes/mergesort.md)
