@@ -14,3 +14,4 @@
 * [InsertionSort : Sort](./readmes/insertionsort.md)
 * [InsertionSort : code](./project/InsertionSort.java)
 * [MergeSort : Merge](.redmes/mergesort.md)
+* [QuickSort : Quick Sort](.redmes/quicksort.md)
