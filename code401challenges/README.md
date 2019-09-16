@@ -16,3 +16,7 @@
 * [MergeSort : Merge](.redmes/mergesort.md)
 * [QuickSort : Quick Sort](.redmes/quicksort.md)
 * [Hash Table : HashTable](./readmes/hashtable.md)
+* [InsertionSort : code](.project/InsertionSort.java)
+* [FizzBuzzTree : Binary tree](./readmes/fizzbuzztree.md)
+* [BreadthTraversal : Breadth](./readmes/breadth.md)
+
