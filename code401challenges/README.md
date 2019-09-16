@@ -16,3 +16,4 @@
 * [MergeSort : Merge](.redmes/mergesort.md)
 * [QuickSort : Quick Sort](.redmes/quicksort.md)
 * [Hash Table : HashTable](./readmes/hashtable.md)
+* [Repeated Word: RepeatedWord](./readmes/repeatedword.md)
