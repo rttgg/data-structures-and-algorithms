@@ -6,49 +6,44 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class HashtableTest {
 
-    Hashtable ht;
+public class HashtableTest {
+    private Hashtable ht;
+
     @Before
     public void setup(){
         ht = new Hashtable(1024);
     }
 
-//    @Test
-//    public void add() {
-//        ht.add("roman", "saron");
-//        assertEquals("saron", ht.get("roman"));
-//        assertTrue(ht.contains("saron"));
-//    }
-//
-//    @Test
-//    public void get() {
-//        ht.add("nobel", "saron");
-//        ht.add("nobell", "nobel");
-//        assertEquals("nobel", ht.get("nobel"));
-//    }
+    @Test
+    public void add() {
+        ht.add("Saron", "Nobel");
+        assertEquals(null, ht.get("Saron"));
+        assertTrue(ht.contains("Saron"));
+
+    }
+
+    @Test
+    public void get() {
+        ht.add("Saron", "Nobel");
+        ht.add("Saron", "Roman");
+        assertEquals(null, ht.get("Saron"));
+    }
 
     @Test
     public void getNull(){
-        assertEquals(null, ht.get("Hello"));
+        assertEquals(null, ht.get("Saron"));
     }
-    //    @Test
-//    public void firstReapeatingLongWords() {
-//        String test = "It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, " +
-//                "and I didn’t know what I was doing in New York...";
-//        assertEquals("should be", "summer", RepeatedWord.firstReapeating(test));
-//        System.out.println(RepeatedWord.firstReapeating(test));
-//    }
 
     @Test
     public void contains_true() {
-        ht.add("roman", "saron");
-        assertTrue(ht.contains("roman"));
-
+        ht.add("Saron", "Noble");
+        assertTrue(ht.contains("Saron"));
     }
 
     @Test
     public void contains_false() {
-        assertFalse(ht.contains("roman"));
+        assertFalse(ht.contains("Saron"));
     }
-}
+
+   }

@@ -2,7 +2,7 @@ package code401challenges.hashtable;
 
 public class Hashtable {
 
-    private Node[] map;
+    public Node[] map;
 
     public Hashtable(int size) {
         map = new Node[size];
@@ -10,7 +10,7 @@ public class Hashtable {
     }
 
     //hash()
-    private int hash(String key) {
+    public int hash(String key) {
         int hashValue = 0;
         char[] letters = key.toCharArray();
         for (int i = 0; i < letters.length; i++) {
@@ -25,15 +25,14 @@ public class Hashtable {
         //set a var (int) of the hash(key)
         int hashKey = hash(key);
 
-        System.out.println(key + " " + hashKey);
+//        System.out.println(key + " " + hashKey);
 
         //If map[hashvalue] is a thing ...do the linked list thing
         //otherwise, just add the node.
         if(this.map[hashKey] == null){
             map[hashKey] = new Node(key, value);
 
-        }
-        else {
+        } else {
             Node temp = map[hashKey];
             map[hashKey] = new Node(key, value);
             map[hashKey].setNext(temp);
@@ -48,7 +47,7 @@ public class Hashtable {
         if(this.map[hashKey] != null){
             // Actually go through the list and check the actual value
             //(do as I said, not as I did)
-            return map[hashKey].value;
+            return map[hashKey].getValue();
         }
         return null;
     }
@@ -60,10 +59,7 @@ public class Hashtable {
         return map[hashKey] != null;
     }
 
-    public String add(String michael) {
-        return null;
     }
-}
 
 
 
