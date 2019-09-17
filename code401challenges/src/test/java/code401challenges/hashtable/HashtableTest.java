@@ -32,11 +32,19 @@ public class HashtableTest {
     public void getNull(){
         assertEquals(null, ht.get("Hello"));
     }
+    //    @Test
+//    public void firstReapeatingLongWords() {
+//        String test = "It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, " +
+//                "and I didn’t know what I was doing in New York...";
+//        assertEquals("should be", "summer", RepeatedWord.firstReapeating(test));
+//        System.out.println(RepeatedWord.firstReapeating(test));
+//    }
 
     @Test
     public void contains_true() {
         ht.add("roman", "saron");
         assertTrue(ht.contains("roman"));
+
     }
 
     @Test
