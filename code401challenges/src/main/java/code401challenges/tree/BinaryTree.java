@@ -17,11 +17,15 @@
             this.root = new Node(i);
         }
 
+       public BinaryTree() {
 
-        //inOrder
-        public ArrayList<T> inOrder(){
+       }
+
+
+       //inOrder
+        public ArrayList<T> inOrder(BinaryTree binaryTree){
             ArrayList<T> value = new ArrayList<>();
-            inOrderHelper(this.root, value);
+            inOrderHelper(binaryTree.root, value);
             return value;
         }
 
@@ -114,6 +118,13 @@
             }
             return maxValue;
         }
+
+       public void add(int i) {
+       }
+
+       public ArrayList inOrder() {
+           return null;
+       }
 
 
 //        public static void main(String[] args){

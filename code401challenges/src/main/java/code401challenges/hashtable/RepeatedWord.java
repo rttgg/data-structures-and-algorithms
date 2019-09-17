@@ -1,4 +1,4 @@
-package code401challenges.repeatedword;
+package code401challenges.hashtable;
 
 
 import java.util.HashSet;

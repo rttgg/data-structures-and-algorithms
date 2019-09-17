@@ -5,27 +5,19 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class MergeSortTest {
-
     @Test
-    public void testSort() {
-        int arr[] = { 12, 11, 13, 5, 6, 7 };
-
-            MergeSort newSort = new MergeSort();
-            newSort.sort(arr, 0, arr.length-1);
-            assertArrayEquals(new int[]{5, 6, 7, 11, 12, 13}, arr);
-
-        }
-
-
-    @Test
-    public void merge() {
+    public void mergeSort() {
+        int[] arr = new int[]{5,6,2,1,9,3,4};
+        int[] expected = new int[]{1,2,3,4,5,6,9};
+        assertArrayEquals(expected, MergeSort.mergeSort(arr));
     }
 
     @Test
-    public void printArray() {
+    public void mergeSort_empty() {
+        int[] arr = new int[]{};
+        int[] expected = new int[]{};
+        assertArrayEquals(expected, MergeSort.mergeSort(arr));
     }
 
-    @Test
-    public void main() {
-    }
+
 }

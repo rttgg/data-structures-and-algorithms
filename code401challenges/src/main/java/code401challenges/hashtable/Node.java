@@ -5,6 +5,10 @@ public class Node {
     public String key;
     public String value;
     public Node next;
+    public Object left;
+    public Object right;
+    private Node nextNode;
+
 
     public void setKey(String key) {
         this.key = key;
@@ -33,5 +37,9 @@ public class Node {
     public Node(String key, String value){
         setKey(key);
         setKey(value);
+    }
+
+    public Node getNextNode() {
+        return nextNode;
     }
 }

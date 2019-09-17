@@ -2,6 +2,11 @@ package code401challenges.mergesorts;
 
 public class MergeSort {
 
+
+    public static int[] mergeSort(int[] arr) {
+        return arr;
+    }
+
     void merge(int arr[], int left, int right, int middle) {
 
         int sizeleft = middle - left + 1;
@@ -10,6 +15,7 @@ public class MergeSort {
         //create temp arrays
         int L[] = new int[sizeleft];
         int R[] = new int[sizeright];
+
 
         //copy data to temp arrays
         for (int i = 0; i < sizeleft; i++) {
@@ -85,6 +91,9 @@ public class MergeSort {
         }
 
 
+    public void mergeSort(int[] arr, int i, int i1) {
+
     }
+}
 
 

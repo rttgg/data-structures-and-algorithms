@@ -1,5 +1,6 @@
-package code401challenges.repeatedword;
+package code401challenges.hashtable;
 
+import code401challenges.hashtable.RepeatedWord;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
