@@ -2,8 +2,6 @@ package code401challenges.tree;
 
 import code401challenges.StacksAndQueues.Queue;
 
-import java.util.LinkedList;
-
 public class BreadthTraversal {
     public void breadthQueue(Node root){
         if(root == null){
@@ -14,12 +12,12 @@ public class BreadthTraversal {
         while(queueList.isEmpty()){
             root = queueList.peek();
             System.out.println(root.value);
-            if(root.leftChild != null){
-                queueList.add(root.leftChild);
+            if(root.left != null){
+                queueList.add(root.left);
             }
-            if(root.rightChild != null)
+            if(root.node != null)
             {
-                queueList.add(root.rightChild);
+                queueList.add(root.node);
             }
             }
         }

@@ -2,26 +2,27 @@
 
     public class Node<T> {
 
-        public Node leftChild;
+        public Node left;
+        public Node rightChild;
         // instance variables
         T value;
 
-        Node rightChild;
+        Node node;
         Node nextNode;
 
         // constructor
         public Node ( Node leftChild, Node rightChild,T value) {
 
-            this.leftChild = leftChild;
-            this.rightChild = rightChild;
+            this.left = leftChild;
+            this.node = rightChild;
             this.value = value;
             this.nextNode = null;
         }
 
         public Node (T value){
 
-            this.leftChild = null;
-            this.rightChild = null;
+            this.left = null;
+            this.node = null;
             this.value = value;
             this.nextNode = null;
         }

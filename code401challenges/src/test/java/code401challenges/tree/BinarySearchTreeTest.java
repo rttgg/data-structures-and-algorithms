@@ -15,10 +15,10 @@
             Node<Integer> leftRightNode = new Node<>(60);
             Node<Integer> rightRightNode = new Node<>(90);
             testBinaryTree.root = rootNode;
-            rootNode.leftChild = leftNode;
-            rootNode.rightChild = rightNode;
-            leftNode.rightChild = leftRightNode;
-            rightNode.rightChild = rightRightNode;
+            rootNode.left = leftNode;
+            rootNode.node = rightNode;
+            leftNode.node = leftRightNode;
+            rightNode.node = rightRightNode;
 
             testBinaryTree.add(2);
             assertEquals("2, 20, 60, 50, 80, 90, ", BinarySearchTree.arrayListToString(testBinaryTree.inOrder()));
@@ -40,10 +40,10 @@
             Node<Integer> leftRightNode = new Node<>(40);
             Node<Integer> rightRightNode = new Node<>(90);
             testBinaryTree.root = rootNode;
-            rootNode.leftChild = leftNode;
-            rootNode.rightChild = rightNode;
-            leftNode.rightChild = leftRightNode;
-            rightNode.rightChild = rightRightNode;
+            rootNode.left = leftNode;
+            rootNode.node = rightNode;
+            leftNode.node = leftRightNode;
+            rightNode.node = rightRightNode;
 
             assertFalse(testBinaryTree.contains(20));
             assertTrue(testBinaryTree.contains(75));

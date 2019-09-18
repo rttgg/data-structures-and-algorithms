@@ -27,20 +27,20 @@
 
             if (nodeToAdd.value < node.value){
 
-                if (node.leftChild == null){
-                    node.leftChild = nodeToAdd;
+                if (node.left == null){
+                    node.left = nodeToAdd;
 
                 } else {
-                    addHelper(node.leftChild, nodeToAdd);
+                    addHelper(node.left, nodeToAdd);
                 }
             }
 
             if (nodeToAdd.value > node.value){
-                if (node.rightChild == null){
-                    node.rightChild = nodeToAdd;
+                if (node.node == null){
+                    node.node = nodeToAdd;
 
                 } else {
-                    addHelper(node.rightChild, nodeToAdd);
+                    addHelper(node.node, nodeToAdd);
                 }
             }
 
@@ -55,12 +55,12 @@
             if (value == node.value){
 
                 return true;
-            } else if (value < node.value && node.leftChild != null){
+            } else if (value < node.value && node.left != null){
 
-                return containsHelper(node.leftChild, value);
-            } else if (value > node.value && node.rightChild != null){
+                return containsHelper(node.left, value);
+            } else if (value > node.value && node.node != null){
 
-                return containsHelper(node.rightChild, value);
+                return containsHelper(node.node, value);
             }
 
             return false;

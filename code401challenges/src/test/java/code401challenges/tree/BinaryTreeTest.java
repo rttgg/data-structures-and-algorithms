@@ -23,13 +23,13 @@
             Node<Integer> rightNode = new Node<>(30);
 
             testTree.root = rootNode;
-            rootNode.leftChild = leftNode;
-            rootNode.rightChild = rightNode;
+            rootNode.left = leftNode;
+            rootNode.node = rightNode;
 
 
             assertEquals(10, testTree.root.value);
-            assertEquals(20, testTree.root.leftChild.value);
-            assertEquals(30, testTree.root.rightChild.value);
+            assertEquals(20, testTree.root.left.value);
+            assertEquals(30, testTree.root.node.value);
         }
 
         @Test public void testInOrder(){
@@ -38,8 +38,8 @@
             Node<Integer> leftNode = new Node<>(20);
             Node<Integer> rightNode = new Node<>(30);
             testTree.root = rootNode;
-            rootNode.leftChild = leftNode;
-            rootNode.rightChild = rightNode;
+            rootNode.left = leftNode;
+            rootNode.node = rightNode;
 
             String output = BinaryTree.arrayListToString(testTree.inOrder());
 
@@ -54,10 +54,10 @@
             Node<Integer> leftLeftNode = new Node<>(40);
             Node<Integer> leftrightNode = new Node<>(50);
             testTree.root = rootNode;
-            rootNode.leftChild = leftNode;
-            rootNode.rightChild = rightNode;
-            leftNode.leftChild = leftLeftNode;
-            leftNode.rightChild = leftrightNode;
+            rootNode.left = leftNode;
+            rootNode.node = rightNode;
+            leftNode.left = leftLeftNode;
+            leftNode.node = leftrightNode;
 
             String output = BinaryTree.arrayListToString(testTree.preOrder());
 
@@ -73,8 +73,8 @@
             Node<Integer> leftNode = new Node<>(20);
             Node<Integer> rightNode = new Node<>(30);
             testTree.root = rootNode;
-            rootNode.leftChild = leftNode;
-            rootNode.rightChild = rightNode;
+            rootNode.left = leftNode;
+            rootNode.node = rightNode;
 
             String output = BinaryTree.arrayListToString(testTree.postOrder());
 
@@ -92,8 +92,8 @@
             Node<Integer> leftNode = new Node<>(20);
             Node<Integer> rightNode = new Node<>(30);
             testTree.root = rootNode;
-            rootNode.leftChild = leftNode;
-            rootNode.rightChild = rightNode;
+            rootNode.left = leftNode;
+            rootNode.node = rightNode;
 
            String output = BinaryTree.arrayListToString(testTree.inOrder());
 
@@ -112,15 +112,15 @@
             Node left = new Node(3);
             Node newRight = new Node(12);
             Node newLeft = new Node(12);
-            maxtree.root.leftChild = left;
-            maxtree.root.rightChild = right;
-            maxtree.root.leftChild.rightChild = newRight;
-            maxtree.root.leftChild.rightChild.leftChild = new Node(7);
-            maxtree.root.leftChild.rightChild.leftChild = new Node(1);
-            maxtree.root.leftChild.leftChild = newLeft;
+            maxtree.root.left = left;
+            maxtree.root.node = right;
+            maxtree.root.left.node = newRight;
+            maxtree.root.left.node.left = new Node(7);
+            maxtree.root.left.node.left = new Node(1);
+            maxtree.root.left.left = newLeft;
 
-            maxtree.root.rightChild.rightChild = new Node(4);
-            maxtree.root.rightChild.rightChild.rightChild = new Node(10);
+            maxtree.root.node.node = new Node(4);
+            maxtree.root.node.node.node = new Node(10);
 
             int maxValue = maxtree.findMaxValue();
 

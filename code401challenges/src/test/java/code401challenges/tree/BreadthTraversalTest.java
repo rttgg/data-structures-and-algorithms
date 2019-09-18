@@ -14,11 +14,11 @@ public class BreadthTraversalTest {
         Node<Integer> rootLeftRight = new Node<>(6);
         Node<Integer> rootRightRight = new Node<>(9);
         testTree.root = root;
-        root.leftChild = rootLeft;
-        root.rightChild = rootRight;
-        root.leftChild = rootLeftLeft;
-        root.rightChild = rootLeftRight;
-        root.rightChild = rootRightRight;
+        root.left = rootLeft;
+        root.node = rootRight;
+        root.left = rootLeftLeft;
+        root.node = rootLeftRight;
+        root.node = rootRightRight;
         assertEquals("[2,7,5,2,6,9]", BinaryTree.arrayListToString(testTree.inOrder()));
 
 
