@@ -17,7 +17,8 @@ public class HashtableTest {
 
     @Test
     public void add() {
-        ht.add("Saron", "Nobel");
+
+        ht.add("Saron", "Bucket 7");
         assertEquals(null, ht.get("Saron"));
         assertTrue(ht.contains("Saron"));
 

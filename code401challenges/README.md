@@ -17,7 +17,8 @@
 * [QuickSort : Quick Sort](.redmes/quicksort.md)
 * [Hash Table : HashTable](./readmes/hashtable.md)
 * [Repeated Word: RepeatedWord](./readmes/repeatedword.md)
+* [TreeIntersection: Tree Intersection](./readmes/treeintersection.md)
+* [LeftJoins: Left Joins](./readmes/leftjoin.md)
 * [InsertionSort : code](.project/InsertionSort.java)
 * [FizzBuzzTree : Binary tree](./readmes/fizzbuzztree.md)
 * [BreadthTraversal : Breadth](./readmes/breadth.md)
-

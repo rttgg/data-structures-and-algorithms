@@ -9,6 +9,10 @@ public class Hashtable {
 
     }
 
+//    public Hashtable() {
+//
+//    }
+
     //hash()
     public int hash(String key) {
         int hashValue = 0;

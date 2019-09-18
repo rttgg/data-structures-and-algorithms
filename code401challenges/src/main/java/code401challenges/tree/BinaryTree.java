@@ -31,13 +31,13 @@
 
         private void inOrderHelper(Node node, ArrayList value){
 
-            if (node.leftChild != null){
-                inOrderHelper(node.leftChild, value);
+            if (node.left != null){
+                inOrderHelper(node.left, value);
             }
             value.add(node.value);
 
-            if (node.rightChild != null){
-                inOrderHelper(node.rightChild, value);
+            if (node.node != null){
+                inOrderHelper(node.node, value);
             }
         }
 
@@ -54,11 +54,11 @@
 
             value.add(node.value);
 
-            if (node.leftChild != null){
-                preOrderHelper(node.leftChild, value);
+            if (node.left != null){
+                preOrderHelper(node.left, value);
             }
-            if (node.rightChild != null){
-                preOrderHelper(node.rightChild, value);
+            if (node.node != null){
+                preOrderHelper(node.node, value);
             }
 
 
@@ -73,12 +73,12 @@
 
         private void postOrderHelper(Node node, ArrayList value){
 
-            if (node.leftChild != null){
-                postOrderHelper(node.leftChild, value);
+            if (node.left != null){
+                postOrderHelper(node.left, value);
             }
 
-            if (node.rightChild != null){
-                postOrderHelper(node.rightChild, value);
+            if (node.node != null){
+                postOrderHelper(node.node, value);
             }
 
             value.add(node.value);
@@ -109,11 +109,11 @@
                 if ((int) rootValue.value > maxValue){
                     maxValue = (int) rootValue.value;
                 }
-                if (rootValue.leftChild != null){
-                    queueList.add(rootValue.leftChild);
+                if (rootValue.left != null){
+                    queueList.add(rootValue.left);
                 }
-                if (rootValue.rightChild != null){
-                    queueList.add(rootValue.rightChild);
+                if (rootValue.node != null){
+                    queueList.add(rootValue.node);
                 }
             }
             return maxValue;
@@ -125,6 +125,10 @@
        public ArrayList inOrder() {
            return null;
        }
+
+//       public <E> ArrayList<E> inOrder(Node root, ArrayList<E> es) {
+//           return null;
+//       }
 
 
 //        public static void main(String[] args){
