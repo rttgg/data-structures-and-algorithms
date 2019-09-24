@@ -170,4 +170,15 @@ public class LinkedList<any> {
 
     }
 
+    public void add(any s) {
+
+    }
+
+    public int size() {
+        return 0;
+    }
+
+    public any poll() {
+        return null;
+    }
 }

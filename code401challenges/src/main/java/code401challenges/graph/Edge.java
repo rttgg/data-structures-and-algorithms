@@ -6,6 +6,7 @@ public class Edge<T> {
 
     //constructors
     public Edge(Node<T> node){
+
         this.node = node;
     }
 
@@ -15,6 +16,7 @@ public class Edge<T> {
     }
 
     public Node<T> getNode() {
+
         return this.node;
     }
 }

@@ -68,4 +68,8 @@ public class Queue<T> implements Information {
     public boolean isEmpty() {
         return false;
     }
+
+    public T remove() {
+        return null;
+    }
 }
