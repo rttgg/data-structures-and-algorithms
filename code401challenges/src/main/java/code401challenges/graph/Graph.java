@@ -1,10 +1,7 @@
 package code401challenges.graph;
 
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class Graph<T> {
     //instance variables
@@ -33,10 +30,10 @@ public class Graph<T> {
 
 
     //addEdge()
-    public void addEdge(Node<T> nodeOne, Node<T> nodeTwo) {
+    public void addEdge(Node<T> nodeOne, Node<T> nodeTwo, int weight) {
         if (this.vertices.contains(nodeOne) && this.vertices.contains(nodeTwo)) {
-            nodeOne.addNeighbor(nodeTwo);
-            nodeTwo.addNeighbor(nodeOne);
+            nodeOne.addNeighbor(nodeTwo, weight);
+            nodeTwo.addNeighbor(nodeOne, weight);
 
         }
 
@@ -60,12 +57,15 @@ public class Graph<T> {
     public static LinkedList<Node> breadthFirstSearch(Node head) {
         LinkedList resultList = new LinkedList();
         HashSet<Node> visited = new HashSet<>();
+//        Queue<Node> breadth = new Queue<>();
+
 
         if (head == null) {
             throw new NullPointerException("Cannot be null");
         }
 
         Queue queue = new LinkedList();
+//        breadth.enqueue(head);
         queue.add(head);
         visited.add(head);
 
@@ -73,17 +73,34 @@ public class Graph<T> {
             Node tempNode = (Node) queue.remove();
             resultList.add(tempNode);
 
-//                for(Edges neighbor: (HashSet<Edges>) tempNode.neighbors){
-//                    if(!visited.contains(neighbor.node)){
-//                        queue.add(neighbor.node);
-//                        visited.add(neighbor.node);
-//                    }
-//                }
+            for (Edge neighbor : (HashSet<Edge>) tempNode.neighbors) {
+                if (!visited.contains(neighbor.getNode())) {
+                    queue.add(neighbor.getNode());
+                    visited.add(neighbor.getNode());
+                }
+            }
         }
         return resultList;
     }
 
-    public static <Edges> LinkedList<Node> depthFirstSearch(Node head) {
+    public static HashMap<Boolean, Integer> getEdge(Graph routes, String[] cityNames) {
+        HashMap<Boolean, Integer> result = new HashMap<>();
+        int cost = 0;
+        boolean b = false;
+        Node current;
+        for (Object n : routes.vertices) {
+            if (cityNames[0].equals(n)) {
+                current = (Node) n;
+            }
+        }
+        System.out.println(routes.vertices);
+        result.put(b, cost);
+        return result;
+
+}
+
+
+    public static <Edge> LinkedList<Node> depthFirstSearch(Node head) {
         LinkedList result = new LinkedList();
         HashSet<Node> visited = new HashSet<>();
 
@@ -95,10 +112,10 @@ public class Graph<T> {
             Node tempNode = (Node) stack.pop();
             result.add(tempNode);
 
-//            for(Edges neighbor: (HashSet<Edges>) tempNode.neighbors){
-//                if(!visited.contains(neighbor.node)){
-//                    stack.push(neighbor.node);
-//                    visited.add(neighbor.node);
+//            for(Edge neighbor: (HashSet<Edge>) tempNode.neighbors){
+//                if(!visited.contains(neighbor.getNode())){
+//                    stack.push(neighbor.;
+//                    visited.add(neighbor.getNode());
 //                }
 //            }
         }
