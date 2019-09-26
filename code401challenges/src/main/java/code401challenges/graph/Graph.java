@@ -30,6 +30,15 @@ public class Graph<T> {
 
 
     //addEdge()
+    public void addEdge(Node<T> nodeOne, Node<T> nodeTwo) {
+        if (this.vertices.contains(nodeOne) && this.vertices.contains(nodeTwo)) {
+            nodeOne.addNeighbor(nodeTwo);
+            nodeTwo.addNeighbor(nodeOne);
+
+        }
+
+    }
+
     public void addEdge(Node<T> nodeOne, Node<T> nodeTwo, int weight) {
         if (this.vertices.contains(nodeOne) && this.vertices.contains(nodeTwo)) {
             nodeOne.addNeighbor(nodeTwo, weight);
@@ -55,27 +64,30 @@ public class Graph<T> {
     }
 
     public static LinkedList<Node> breadthFirstSearch(Node head) {
-        LinkedList resultList = new LinkedList();
+        LinkedList resultList = new LinkedList<>();
         HashSet<Node> visited = new HashSet<>();
-//        Queue<Node> breadth = new Queue<>();
+        Queue<Node> breadth = new Queue<>();
 
 
         if (head == null) {
             throw new NullPointerException("Cannot be null");
         }
 
-        Queue queue = new LinkedList();
-//        breadth.enqueue(head);
-        queue.add(head);
+        breadth.enqueue(head);
         visited.add(head);
 
-        while (!queue.isEmpty()) {
-            Node tempNode = (Node) queue.remove();
+//        Queue queue = new LinkedList();
+//        breadth.enqueue(head);
+//        queue.add(head);
+//        visited.add(head);
+
+        while (!breadth.isEmpty()) {
+            Node tempNode = breadth.dequeue();
             resultList.add(tempNode);
 
             for (Edge neighbor : (HashSet<Edge>) tempNode.neighbors) {
                 if (!visited.contains(neighbor.getNode())) {
-                    queue.add(neighbor.getNode());
+                    breadth.enqueue(neighbor.getNode());
                     visited.add(neighbor.getNode());
                 }
             }
@@ -100,7 +112,7 @@ public class Graph<T> {
 }
 
 
-    public static <Edge> LinkedList<Node> depthFirstSearch(Node head) {
+    public static LinkedList<Node> depthFirstSearch(Node head) {
         LinkedList result = new LinkedList();
         HashSet<Node> visited = new HashSet<>();
 
@@ -112,15 +124,22 @@ public class Graph<T> {
             Node tempNode = (Node) stack.pop();
             result.add(tempNode);
 
-//            for(Edge neighbor: (HashSet<Edge>) tempNode.neighbors){
-//                if(!visited.contains(neighbor.getNode())){
-//                    stack.push(neighbor.;
-//                    visited.add(neighbor.getNode());
-//                }
-//            }
+            for(Edge neighbor: (HashSet<Edge>) tempNode.neighbors){
+                if(!visited.contains(neighbor.getNode())){
+                    stack.push(neighbor.getNode());
+                    visited.add(neighbor.getNode());
+                }
+            }
         }
         return result;
 
     }
 
+    public LinkedList breadthFirst(Node node1) {
+        return null;
+    }
+
+//    public LinkedList<Node> depthFirst(Node yo) {
+//        return null;
+//    }
 }
