@@ -5,6 +5,7 @@ import java.util.HashSet;
 public class Node<T> {
     //instance variables
     public T value;
+    public Node<T> next;
     public HashSet<Edge> neighbors;
 
 
@@ -17,6 +18,18 @@ public class Node<T> {
     public void addNeighbor(Node<T> node){
         Edge e = new Edge(node);
         this.neighbors.add(e);
+    }
+
+    public T getValue() {
+        return value;
+    }
+
+    public Node<T> getNext() {
+        return next;
+    }
+
+    public HashSet<Edge> getNeighbors() {
+        return neighbors;
     }
 
     public void addNeighbor(Node<T> node, int weight){
